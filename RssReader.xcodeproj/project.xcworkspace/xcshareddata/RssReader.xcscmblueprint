@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "FE8D750F6A21B4416307EEA8CF99A02D0062B444",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "FE8D750F6A21B4416307EEA8CF99A02D0062B444" : 0,
+    "253FBA1E5AC2E96E76DCEFD96B65C7B26C082093" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "ABE8C260-0DD4-4FC0-A87A-882E2CBAD314",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "FE8D750F6A21B4416307EEA8CF99A02D0062B444" : "RssReader\/",
+    "253FBA1E5AC2E96E76DCEFD96B65C7B26C082093" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "RssReader",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "RssReader.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/UIView\/learn_objec_demo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "253FBA1E5AC2E96E76DCEFD96B65C7B26C082093"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/UIView\/Swift_RssReader.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FE8D750F6A21B4416307EEA8CF99A02D0062B444"
+    }
+  ]
+}
