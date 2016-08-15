@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UITableViewController,MWFeedParserDelegate {
-   private var feedParser : MWFeedParser = MWFeedParser.init(feedURL: NSURL.init(string: "http://techcrunch.com/feed/"))
+   private var feedParser : MWFeedParser = MWFeedParser.init(feedURL: NSURL.init(string: "http://blog.csdn.net/nslong/rss/list"))
     var itemsToDisplay : NSArray = NSArray()
    private var parsedItems : NSMutableArray = NSMutableArray()
    private var formatter : NSDateFormatter = NSDateFormatter()
@@ -34,6 +34,12 @@ class ViewController: UITableViewController,MWFeedParserDelegate {
         feedParser.feedParseType = ParseType.init(0)
         feedParser.connectionType = ConnectionType.init(0)
         feedParser.parse()
+        
+        let parser = DYRssXMLParser()
+        parser.startParserRssRequest("http://blog.csdn.net/hyp520520/rss/list")
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -421,6 +421,7 @@
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI 
 									   qualifiedName:(NSString *)qualifiedName attributes:(NSDictionary *)attributeDict {
 	MWXMLLog(@"NSXMLParser: didStartElement: %@", qualifiedName);
+    
     @autoreleasepool {
 	
         // Adjust path
@@ -548,6 +549,8 @@
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName 
 									  namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
 	MWXMLLog(@"NSXMLParser: didEndElement: %@", qName);
+//    NSLog(@"didEndElement :<%@>, namespaceURI :<%@>, qualifiedName :<%@>",elementName,namespaceURI,qName);
+
     @autoreleasepool {
         
         // Parse content as structure (Atom feeds with element type="xhtml")
