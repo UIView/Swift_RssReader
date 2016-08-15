@@ -10,6 +10,9 @@ import UIKit
 
 class ArticleListTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var pTitleLabel: UILabel!
+    @IBOutlet weak var pAuthorLabel: UILabel!
+    @IBOutlet weak var pTimeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +24,14 @@ class ArticleListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func setArticleData(item: MWFeedItem) {
+        self.pTitleLabel.text = item.title
+        self.pAuthorLabel.text = item.author
+        let formart = NSDateFormatter()
+        formart.dateFormat = "yyyy-MM-dd HH:mm"
+        if item.date == nil {
+            item.date = NSDate()
+        }
+        self.pTimeLabel.text = formart.stringFromDate(item.date)
+    }
 }

@@ -13,13 +13,13 @@
 		04DF07BD1D5C51F700FAC0E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DF07BB1D5C51F700FAC0E9 /* Main.storyboard */; };
 		04DF07BF1D5C51F700FAC0E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DF07BE1D5C51F700FAC0E9 /* Assets.xcassets */; };
 		04DF07C21D5C51F700FAC0E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DF07C01D5C51F700FAC0E9 /* LaunchScreen.storyboard */; };
-		04DF07CA1D5C5E9000FAC0E9 /* ReaderDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF07C91D5C5E9000FAC0E9 /* ReaderDetailTableViewController.swift */; };
 		04DF07D21D5C5FB200FAC0E9 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DF07CD1D5C5FB200FAC0E9 /* GTMNSString+HTML.m */; };
 		04DF07D31D5C5FB200FAC0E9 /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DF07CF1D5C5FB200FAC0E9 /* NSDate+InternetDateTime.m */; };
 		04DF07D41D5C5FB200FAC0E9 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DF07D11D5C5FB200FAC0E9 /* NSString+HTML.m */; };
 		04DF07DF1D5C5FB900FAC0E9 /* MWFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DF07D71D5C5FB900FAC0E9 /* MWFeedInfo.m */; };
 		04DF07E01D5C5FB900FAC0E9 /* MWFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DF07D91D5C5FB900FAC0E9 /* MWFeedItem.m */; };
 		04DF07E11D5C5FB900FAC0E9 /* MWFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DF07DB1D5C5FB900FAC0E9 /* MWFeedParser.m */; };
+		04FBBFDC1D6166B200B062E7 /* ReaderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBBFDB1D6166B200B062E7 /* ReaderDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,6 @@
 		04DF07BE1D5C51F700FAC0E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04DF07C11D5C51F700FAC0E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04DF07C31D5C51F700FAC0E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04DF07C91D5C5E9000FAC0E9 /* ReaderDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderDetailTableViewController.swift; sourceTree = "<group>"; };
 		04DF07CC1D5C5FB200FAC0E9 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
 		04DF07CD1D5C5FB200FAC0E9 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		04DF07CE1D5C5FB200FAC0E9 /* NSDate+InternetDateTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+InternetDateTime.h"; sourceTree = "<group>"; };
@@ -46,6 +45,7 @@
 		04DF07DB1D5C5FB900FAC0E9 /* MWFeedParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedParser.m; sourceTree = "<group>"; };
 		04DF07DC1D5C5FB900FAC0E9 /* MWFeedParser_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedParser_Private.h; sourceTree = "<group>"; };
 		04DF07E61D5C68B600FAC0E9 /* MWFeedParser_Bridging_Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedParser_Bridging_Header.h; sourceTree = "<group>"; };
+		04FBBFDB1D6166B200B062E7 /* ReaderDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +82,7 @@
 				04DF07CB1D5C5FB200FAC0E9 /* Categories */,
 				04DF07B71D5C51F700FAC0E9 /* AppDelegate.swift */,
 				04DF07B91D5C51F700FAC0E9 /* ViewController.swift */,
-				04DF07C91D5C5E9000FAC0E9 /* ReaderDetailTableViewController.swift */,
+				04FBBFDB1D6166B200B062E7 /* ReaderDetailViewController.swift */,
 				0438A5241D5DE2ED001D0ABA /* ArticleListTableViewCell.swift */,
 				04DF07BB1D5C51F700FAC0E9 /* Main.storyboard */,
 				04DF07BE1D5C51F700FAC0E9 /* Assets.xcassets */,
@@ -192,10 +192,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0438A5251D5DE2ED001D0ABA /* ArticleListTableViewCell.swift in Sources */,
+				04FBBFDC1D6166B200B062E7 /* ReaderDetailViewController.swift in Sources */,
 				04DF07BA1D5C51F700FAC0E9 /* ViewController.swift in Sources */,
 				04DF07D21D5C5FB200FAC0E9 /* GTMNSString+HTML.m in Sources */,
 				04DF07E11D5C5FB900FAC0E9 /* MWFeedParser.m in Sources */,
-				04DF07CA1D5C5E9000FAC0E9 /* ReaderDetailTableViewController.swift in Sources */,
 				04DF07B81D5C51F700FAC0E9 /* AppDelegate.swift in Sources */,
 				04DF07D41D5C5FB200FAC0E9 /* NSString+HTML.m in Sources */,
 				04DF07DF1D5C5FB900FAC0E9 /* MWFeedInfo.m in Sources */,

@@ -13,16 +13,22 @@ class ViewController: UITableViewController,MWFeedParserDelegate {
     var itemsToDisplay : NSArray = NSArray()
    private var parsedItems : NSMutableArray = NSMutableArray()
    private var formatter : NSDateFormatter = NSDateFormatter()
-   private let CellIdentifier = "NewCell"
+   private let CellIdentifier = "ArticleListTableViewCell"
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.title = "Rss Reader"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.Refresh, target: self, action: #selector(ViewController.refreshAction))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: #selector(ViewController.addRssResourceDataAction))
         formatter.timeStyle = NSDateFormatterStyle.ShortStyle
         formatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        
+        let tempRefresh = UIRefreshControl()
+        tempRefresh.addTarget(self, action: #selector(ViewController.refreshTableDataAction), forControlEvents: UIControlEvents.ValueChanged)
+        tempRefresh.attributedTitle = NSAttributedString.init(string: "Y(^_^)Y 加载中……")
+        tempRefresh.tintColor = UIColor.grayColor()
+        self.refreshControl = tempRefresh
         
         feedParser.delegate = self
         feedParser.feedParseType = ParseType.init(0)
@@ -36,14 +42,16 @@ class ViewController: UITableViewController,MWFeedParserDelegate {
     }
     
     // MARK: - Button Action
-
-    func refreshAction() {
+    func addRssResourceDataAction() {
+        
+    }
+    func refreshTableDataAction() {
         // test right button
         parsedItems.removeAllObjects()
         feedParser.stopped
         feedParser.parse()
         self.tableView.userInteractionEnabled = false
-        self.tableView.alpha = 0.3
+        self.tableView.alpha = 0.75
     }
     func updateTableWithParsedItems() {
         self.itemsToDisplay = parsedItems.sortedArrayUsingDescriptors(NSArray.init(object: NSSortDescriptor.init(key: "date", ascending: false)) as! [NSSortDescriptor])
@@ -69,29 +77,41 @@ class ViewController: UITableViewController,MWFeedParserDelegate {
     
     func feedParserDidFinish(parser: MWFeedParser!) {
         self.updateTableWithParsedItems()
+        self.refreshControl?.endRefreshing()
+
     }
     
     func feedParser(parser: MWFeedParser!, didFailWithError error: NSError!) {
         print(error)
+        self.refreshControl?.endRefreshing()
     }
 //    MARK: - Table view data source
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemsToDisplay.count
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier)
-        if cell == nil {
-            cell = UITableViewCell.init(style: UITableViewCellStyle.Subtitle, reuseIdentifier: CellIdentifier)
-            cell?.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-        }
-        let nItem = itemsToDisplay[indexPath.row]
-        cell?.textLabel?.font = UIFont.boldSystemFontOfSize(15.0)
-        cell?.textLabel?.text = nItem.title
-        cell?.detailTextLabel?.text = nItem.summary
-        return cell!
+        let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier, forIndexPath: indexPath) as! ArticleListTableViewCell
+        let nItem = itemsToDisplay[indexPath.row] as! MWFeedItem
+        cell.setArticleData(nItem)
+        return cell
     }
+    
 // MARK: - Table view delegate
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100;
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let tempVC = segue.destinationViewController;
+        
+        if tempVC.isKindOfClass(ReaderDetailViewController) {
+            let tempReaderVC = tempVC as!ReaderDetailViewController
+            let tempCell = sender as!ArticleListTableViewCell
+            let tempIndex = self.tableView.indexPathForCell(tempCell)
+            let nItem = itemsToDisplay[tempIndex!.row] as! MWFeedItem
+            tempReaderVC.tempItem = nItem
+            
+        }
         
     }
 }
