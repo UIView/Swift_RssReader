@@ -12,14 +12,57 @@ import WebKit
 class ReaderDetailViewController: UIViewController,WKNavigationDelegate {
     var tempItem : MWFeedItem?
     let tempWebView = WKWebView()
-    var progBar = UIProgressView()
+    var progBar : UIProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tempWebView.frame = self.view.frame
-        let tempRequest = NSMutableURLRequest.init(URL: NSURL.init(string: "https://www.baidu.com")!)
-        tempRequest.timeoutInterval = 15.0
-        tempWebView.loadRequest(tempRequest)
+
+        guard tempItem != nil else{
+            // 不符合条件不执行下面语法
+            return;
+        }
+        let cssFilePath = NSBundle.mainBundle().pathForResource("css", ofType: "html")
+        let jsFilePath = NSBundle.mainBundle().pathForResource("js", ofType: "html")
+
+        var tempCSS : String? = nil
+        do{
+            let cssString = try NSString.init(contentsOfFile: cssFilePath!, encoding: NSUTF8StringEncoding)
+            tempCSS=cssString as String
+        }catch{
+            print(error)
+        }
+        
+        var jsSting : String?
+        do {
+            jsSting = try String.init(contentsOfFile: jsFilePath!)
+//            tempWebView.evaluateJavaScript(jsSting!, completionHandler: nil)
+        }
+        catch{
+                print(error)
+        }
+        
+
+        if tempItem!.summary.characters.count > 1 {
+            var hemlString = "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charset=\"utf-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><meta name=\"viewport\" content=\"width=device-width initial-scale=1.0\">"
+            hemlString = hemlString + tempCSS! + "</head><body><p class=\"title\">" + tempItem!.title + "</p>"
+            hemlString = hemlString + "<div class=\"diver\"></div><p style=\"text-align:left;font-size:9pt;margin-left: 14px;margin-top: 10px;margin-bottom: 10px;color:#CCCCCC\"></p><div class=\"content\">" + tempItem!.summary + "</div></body></html>"
+            
+            tempWebView.loadHTMLString(hemlString, baseURL: nil)
+            
+        }else if tempItem!.content.characters.count > 1 {
+            
+            tempWebView.loadHTMLString(tempItem!.content, baseURL: nil)
+            
+        }else{
+            
+            let detailLink = tempItem!.link
+            let tempRequest = NSMutableURLRequest.init(URL: NSURL.init(string: detailLink)!)
+            tempRequest.timeoutInterval = 15.0
+            tempWebView.loadRequest(tempRequest)
+            
+        }
+        
         tempWebView.navigationDelegate = self
         self.view.addSubview(tempWebView)
         
@@ -36,7 +79,7 @@ class ReaderDetailViewController: UIViewController,WKNavigationDelegate {
     }
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        tempWebView.removeObserver(self, forKeyPath: "estimatedProgress")
+        tempWebView.removeObserver(self, forKeyPath: "estimatedProgress", context: nil)
     }
 
     override func didReceiveMemoryWarning() {

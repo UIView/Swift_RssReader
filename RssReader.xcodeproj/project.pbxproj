@@ -19,6 +19,9 @@
 		04DF07DF1D5C5FB900FAC0E9 /* MWFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DF07D71D5C5FB900FAC0E9 /* MWFeedInfo.m */; };
 		04DF07E01D5C5FB900FAC0E9 /* MWFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DF07D91D5C5FB900FAC0E9 /* MWFeedItem.m */; };
 		04DF07E11D5C5FB900FAC0E9 /* MWFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DF07DB1D5C5FB900FAC0E9 /* MWFeedParser.m */; };
+		04F0DA0F1D62B27A00DBF95D /* css_dark.html in Resources */ = {isa = PBXBuildFile; fileRef = 04F0DA0C1D62B27A00DBF95D /* css_dark.html */; };
+		04F0DA101D62B27A00DBF95D /* css.html in Resources */ = {isa = PBXBuildFile; fileRef = 04F0DA0D1D62B27A00DBF95D /* css.html */; };
+		04F0DA111D62B27A00DBF95D /* js.html in Resources */ = {isa = PBXBuildFile; fileRef = 04F0DA0E1D62B27A00DBF95D /* js.html */; };
 		04FBBFDC1D6166B200B062E7 /* ReaderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBBFDB1D6166B200B062E7 /* ReaderDetailViewController.swift */; };
 		04FBBFE11D61B4D200B062E7 /* DYRssXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBBFE01D61B4D200B062E7 /* DYRssXMLParser.swift */; };
 		04FBBFE51D61D87700B062E7 /* DYXMLInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBBFE41D61D87700B062E7 /* DYXMLInfo.swift */; };
@@ -47,6 +50,9 @@
 		04DF07DB1D5C5FB900FAC0E9 /* MWFeedParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedParser.m; sourceTree = "<group>"; };
 		04DF07DC1D5C5FB900FAC0E9 /* MWFeedParser_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedParser_Private.h; sourceTree = "<group>"; };
 		04DF07E61D5C68B600FAC0E9 /* MWFeedParser_Bridging_Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedParser_Bridging_Header.h; sourceTree = "<group>"; };
+		04F0DA0C1D62B27A00DBF95D /* css_dark.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = css_dark.html; sourceTree = "<group>"; };
+		04F0DA0D1D62B27A00DBF95D /* css.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = css.html; sourceTree = "<group>"; };
+		04F0DA0E1D62B27A00DBF95D /* js.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = js.html; sourceTree = "<group>"; };
 		04FBBFDB1D6166B200B062E7 /* ReaderDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderDetailViewController.swift; sourceTree = "<group>"; };
 		04FBBFE01D61B4D200B062E7 /* DYRssXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYRssXMLParser.swift; sourceTree = "<group>"; };
 		04FBBFE41D61D87700B062E7 /* DYXMLInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYXMLInfo.swift; sourceTree = "<group>"; };
@@ -128,6 +134,9 @@
 		04FBBFDF1D61B47000B062E7 /* DYRssParser */ = {
 			isa = PBXGroup;
 			children = (
+				04F0DA0C1D62B27A00DBF95D /* css_dark.html */,
+				04F0DA0D1D62B27A00DBF95D /* css.html */,
+				04F0DA0E1D62B27A00DBF95D /* js.html */,
 				04FBBFE41D61D87700B062E7 /* DYXMLInfo.swift */,
 				04FBBFE01D61B4D200B062E7 /* DYRssXMLParser.swift */,
 			);
@@ -194,6 +203,9 @@
 			files = (
 				04DF07C21D5C51F700FAC0E9 /* LaunchScreen.storyboard in Resources */,
 				04DF07BF1D5C51F700FAC0E9 /* Assets.xcassets in Resources */,
+				04F0DA101D62B27A00DBF95D /* css.html in Resources */,
+				04F0DA111D62B27A00DBF95D /* js.html in Resources */,
+				04F0DA0F1D62B27A00DBF95D /* css_dark.html in Resources */,
 				04DF07BD1D5C51F700FAC0E9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

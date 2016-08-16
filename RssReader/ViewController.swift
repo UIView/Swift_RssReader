@@ -9,7 +9,10 @@
 import UIKit
 
 class ViewController: UITableViewController,MWFeedParserDelegate {
-   private var feedParser : MWFeedParser = MWFeedParser.init(feedURL: NSURL.init(string: "http://blog.csdn.net/nslong/rss/list"))
+    // http://nshipster.cn/feed.xml  "http://blog.csdn.net/nslong/rss/list"
+    let urlString = "http://nshipster.cn/feed.xml"
+    
+   private var feedParser : MWFeedParser = MWFeedParser.init(feedURL: NSURL.init(string: "http://nshipster.cn/feed.xml"))
     var itemsToDisplay : NSArray = NSArray()
    private var parsedItems : NSMutableArray = NSMutableArray()
    private var formatter : NSDateFormatter = NSDateFormatter()
