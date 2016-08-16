@@ -111,7 +111,7 @@ class ViewController: UITableViewController,MWFeedParserDelegate {
     
 // MARK: - Table view delegate
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 100;
+        return 90;
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
