@@ -36,6 +36,7 @@ class ReaderDetailViewController: UIViewController,WKNavigationDelegate {
         var jsSting : String?
         do {
             jsSting = try String.init(contentsOfFile: jsFilePath!)
+//            jsSting = ""
 //            tempWebView.evaluateJavaScript(jsSting!, completionHandler: nil)
         }
         catch{
@@ -46,7 +47,8 @@ class ReaderDetailViewController: UIViewController,WKNavigationDelegate {
         if tempItem!.summary.characters.count > 1 {
             var hemlString = "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charset=\"utf-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><meta name=\"viewport\" content=\"width=device-width initial-scale=1.0\">"
             hemlString = hemlString + tempCSS! + "</head><body><p class=\"title\">" + tempItem!.title + "</p>"
-            hemlString = hemlString + "<div class=\"diver\"></div><p style=\"text-align:left;font-size:9pt;margin-left: 14px;margin-top: 10px;margin-bottom: 10px;color:#CCCCCC\"></p><div class=\"content\">" + tempItem!.summary + "</div></body></html>"
+            hemlString = hemlString + "<div class=\"diver\"></div><p style=\"text-align:left;font-size:9pt;margin-left: 14px;margin-top: 10px;margin-bottom: 10px;color:#CCCCCC\"></p><div class=\"content\">" + tempItem!.summary + "</div>"
+            hemlString = hemlString + jsSting! + "</body></html>"
             
             tempWebView.loadHTMLString(hemlString, baseURL: nil)
             

@@ -12,7 +12,7 @@ class ViewController: UITableViewController,MWFeedParserDelegate {
     // http://nshipster.cn/feed.xml  "http://blog.csdn.net/nslong/rss/list"
     let urlString = "http://nshipster.cn/feed.xml"
     
-   private var feedParser : MWFeedParser = MWFeedParser.init(feedURL: NSURL.init(string: "http://nshipster.cn/feed.xml"))
+   private var feedParser : MWFeedParser = MWFeedParser.init(feedURL: NSURL.init(string: "http://blog.csdn.net/nslong/rss/list"))
     var itemsToDisplay : NSArray = NSArray()
    private var parsedItems : NSMutableArray = NSMutableArray()
    private var formatter : NSDateFormatter = NSDateFormatter()
@@ -31,7 +31,11 @@ class ViewController: UITableViewController,MWFeedParserDelegate {
         tempRefresh.addTarget(self, action: #selector(ViewController.refreshTableDataAction), forControlEvents: UIControlEvents.ValueChanged)
         tempRefresh.attributedTitle = NSAttributedString.init(string: "Y(^_^)Y 加载中……")
         tempRefresh.tintColor = UIColor.grayColor()
+        tempRefresh.beginRefreshing()
         self.refreshControl = tempRefresh
+        
+        self.tableView.tableFooterView = UIView.init(frame: CGRectZero)
+        
         
         feedParser.delegate = self
         feedParser.feedParseType = ParseType.init(0)
