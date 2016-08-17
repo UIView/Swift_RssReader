@@ -17,7 +17,7 @@ class ViewController: UITableViewController,MWFeedParserDelegate {
    private var parsedItems : NSMutableArray = NSMutableArray()
    private var formatter : NSDateFormatter = NSDateFormatter()
    private let CellIdentifier = "ArticleListTableViewCell"
-    
+//    http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-cn
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,10 +43,9 @@ class ViewController: UITableViewController,MWFeedParserDelegate {
         feedParser.parse()
         
         let parser = DYRssXMLParser()
-        parser.startParserRssRequest("http://blog.csdn.net/hyp520520/rss/list")
-        
-        
-        
+        // https://www.bing.com   http://blog.csdn.net/hyp520520/rss/list
+        parser.startParserRssRequest("https://cn.bing.com")
+                
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,8 +55,10 @@ class ViewController: UITableViewController,MWFeedParserDelegate {
     
     // MARK: - Button Action
     func addRssResourceDataAction() {
-        
+        let addRssVC = DYAddRssSourceViewController()
+        self.navigationController?.pushViewController(addRssVC, animated: true)
     }
+    
     func refreshTableDataAction() {
         // test right button
         parsedItems.removeAllObjects()

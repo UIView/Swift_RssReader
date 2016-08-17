@@ -11,12 +11,14 @@ import WebKit
 
 class ReaderDetailViewController: UIViewController,WKNavigationDelegate {
     var tempItem : MWFeedItem?
-    let tempWebView = WKWebView()
-    var progBar : UIProgressView!
+   private var tempWebView : WKWebView!
+   private var progBar : UIProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tempWebView.frame = self.view.frame
+        let webCofig = WKWebViewConfiguration()
+        webCofig.preferences.javaScriptEnabled=true
+        tempWebView = WKWebView.init(frame: self.view.frame, configuration: webCofig)
 
         guard tempItem != nil else{
             // 不符合条件不执行下面语法
@@ -36,8 +38,6 @@ class ReaderDetailViewController: UIViewController,WKNavigationDelegate {
         var jsSting : String?
         do {
             jsSting = try String.init(contentsOfFile: jsFilePath!)
-//            jsSting = ""
-//            tempWebView.evaluateJavaScript(jsSting!, completionHandler: nil)
         }
         catch{
                 print(error)
@@ -67,7 +67,6 @@ class ReaderDetailViewController: UIViewController,WKNavigationDelegate {
         
         tempWebView.navigationDelegate = self
         self.view.addSubview(tempWebView)
-        
         
         progBar = UIProgressView(frame: CGRectMake(0, 64, self.view.frame.width, 30))
         progBar.progress = 0.0
@@ -105,6 +104,12 @@ class ReaderDetailViewController: UIViewController,WKNavigationDelegate {
     }
     
     // MARK: - Navigation
+    func setViewControllerNavBackItem() {
+        
+        let backBarItem = UIBarButtonItem()
+     //   backBarItem.customView = backBarItem.setCustomBackBarItem(<#T##image: UIImage##UIImage#>, title: "返回", style: <#T##UIBarButtonItem.BarCustomStyle#>)
+        self.navigationItem.backBarButtonItem = backBarItem
+    }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
@@ -112,7 +117,7 @@ class ReaderDetailViewController: UIViewController,WKNavigationDelegate {
     // MARK: - WKWebView Delegate
     func webView(webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         print(" webview load start")
-
+        print(webView.URL?.absoluteString)
     }
     func webView(webView: WKWebView, didCommitNavigation navigation: WKNavigation!) {
         NSLog("didCommitNavigation ")
@@ -120,6 +125,9 @@ class ReaderDetailViewController: UIViewController,WKNavigationDelegate {
     
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
         print(" webview load finish")
+        if webView.URL!.absoluteString == "about:blank" {
+            webView.evaluateJavaScript("AddImgClickEvent()", completionHandler: nil) 
+        }
     }
 
     func webView(webView: WKWebView, didFailNavigation navigation: WKNavigation!, withError error: NSError) {

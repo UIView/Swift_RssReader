@@ -17,5 +17,21 @@ $(window).load(function(){
             $(this).width(300).height(Math.round(300*(imgoheight/imgowidth)));
         }
     });
-}); 
+});
+
+///给页面中所有img对象添加onclick事件
+function AddImgClickEvent()
+{
+    var objs = document.getElementsByTagName("img");
+    for(var i=0;i<objs.length;i++)
+    {
+        objs[i].onclick=function()
+        {
+            window.open(this.src);
+        }
+///        objs[i].style.cursor = "pointer";
+    }
+}
+//AddImgClickEvent();
 </script>
+

@@ -29,12 +29,13 @@ class DYRssXMLParser: NSObject {
         let feedURL = NSURL.init(string: rssSource as String)
         let tempRequest = NSURLRequest.init(URL: feedURL!, cachePolicy: .UseProtocolCachePolicy, timeoutInterval: timeoutInterval)
       let dataTask = parserURLSession!.dataTaskWithRequest(tempRequest, completionHandler: { (data, response, error) in
-        
+        guard data != nil else{
+            print(" Data is nil @ \n", error )
+            return
+        }
             let tempString = NSString.init(data: data!, encoding: NSUTF8StringEncoding)
             print(tempString)
         
-        
-            
         })
        dataTask.resume()
         

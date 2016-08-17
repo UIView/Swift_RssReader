@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0438A5251D5DE2ED001D0ABA /* ArticleListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0438A5241D5DE2ED001D0ABA /* ArticleListTableViewCell.swift */; };
+		0441D75B1D63F4A500D2BD22 /* DYAddRssSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441D75A1D63F4A500D2BD22 /* DYAddRssSourceViewController.swift */; };
+		0441D7621D640BA500D2BD22 /* BarButtonItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441D7611D640BA500D2BD22 /* BarButtonItemExtension.swift */; };
 		04DF07B81D5C51F700FAC0E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF07B71D5C51F700FAC0E9 /* AppDelegate.swift */; };
 		04DF07BA1D5C51F700FAC0E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF07B91D5C51F700FAC0E9 /* ViewController.swift */; };
 		04DF07BD1D5C51F700FAC0E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DF07BB1D5C51F700FAC0E9 /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		0438A5241D5DE2ED001D0ABA /* ArticleListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListTableViewCell.swift; sourceTree = "<group>"; };
+		0441D75A1D63F4A500D2BD22 /* DYAddRssSourceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYAddRssSourceViewController.swift; sourceTree = "<group>"; };
+		0441D7611D640BA500D2BD22 /* BarButtonItemExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButtonItemExtension.swift; sourceTree = "<group>"; };
 		04DF07B41D5C51F700FAC0E9 /* RssReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RssReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DF07B71D5C51F700FAC0E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04DF07B91D5C51F700FAC0E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 				04DF07B71D5C51F700FAC0E9 /* AppDelegate.swift */,
 				04DF07B91D5C51F700FAC0E9 /* ViewController.swift */,
 				04FBBFDB1D6166B200B062E7 /* ReaderDetailViewController.swift */,
+				0441D75A1D63F4A500D2BD22 /* DYAddRssSourceViewController.swift */,
 				0438A5241D5DE2ED001D0ABA /* ArticleListTableViewCell.swift */,
 				04DF07BB1D5C51F700FAC0E9 /* Main.storyboard */,
 				04DF07BE1D5C51F700FAC0E9 /* Assets.xcassets */,
@@ -112,6 +117,7 @@
 				04DF07CF1D5C5FB200FAC0E9 /* NSDate+InternetDateTime.m */,
 				04DF07D01D5C5FB200FAC0E9 /* NSString+HTML.h */,
 				04DF07D11D5C5FB200FAC0E9 /* NSString+HTML.m */,
+				0441D7611D640BA500D2BD22 /* BarButtonItemExtension.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -218,9 +224,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				04FBBFE51D61D87700B062E7 /* DYXMLInfo.swift in Sources */,
+				0441D7621D640BA500D2BD22 /* BarButtonItemExtension.swift in Sources */,
 				0438A5251D5DE2ED001D0ABA /* ArticleListTableViewCell.swift in Sources */,
 				04FBBFDC1D6166B200B062E7 /* ReaderDetailViewController.swift in Sources */,
 				04DF07BA1D5C51F700FAC0E9 /* ViewController.swift in Sources */,
+				0441D75B1D63F4A500D2BD22 /* DYAddRssSourceViewController.swift in Sources */,
 				04FBBFE11D61B4D200B062E7 /* DYRssXMLParser.swift in Sources */,
 				04DF07D21D5C5FB200FAC0E9 /* GTMNSString+HTML.m in Sources */,
 				04DF07E11D5C5FB900FAC0E9 /* MWFeedParser.m in Sources */,
