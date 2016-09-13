@@ -9,12 +9,15 @@
 import UIKit
 
 class ViewController: UITableViewController,MWFeedParserDelegate {
-   private var feedParser : MWFeedParser = MWFeedParser.init(feedURL: NSURL.init(string: "http://techcrunch.com/feed/"))
+    // http://nshipster.cn/feed.xml  "http://blog.csdn.net/nslong/rss/list"
+    let urlString = "http://nshipster.cn/feed.xml"
+    
+   private var feedParser : MWFeedParser = MWFeedParser.init(feedURL: NSURL.init(string: "http://blog.csdn.net/nslong/rss/list"))
     var itemsToDisplay : NSArray = NSArray()
    private var parsedItems : NSMutableArray = NSMutableArray()
    private var formatter : NSDateFormatter = NSDateFormatter()
    private let CellIdentifier = "ArticleListTableViewCell"
-    
+//    http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-cn
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +31,21 @@ class ViewController: UITableViewController,MWFeedParserDelegate {
         tempRefresh.addTarget(self, action: #selector(ViewController.refreshTableDataAction), forControlEvents: UIControlEvents.ValueChanged)
         tempRefresh.attributedTitle = NSAttributedString.init(string: "Y(^_^)Y 加载中……")
         tempRefresh.tintColor = UIColor.grayColor()
+        tempRefresh.beginRefreshing()
         self.refreshControl = tempRefresh
+        
+        self.tableView.tableFooterView = UIView.init(frame: CGRectZero)
+        
         
         feedParser.delegate = self
         feedParser.feedParseType = ParseType.init(0)
         feedParser.connectionType = ConnectionType.init(0)
         feedParser.parse()
+        
+        let parser = DYRssXMLParser()
+        // https://www.bing.com   http://blog.csdn.net/hyp520520/rss/list
+        parser.startParserRssRequest("https://cn.bing.com")
+                
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,8 +55,10 @@ class ViewController: UITableViewController,MWFeedParserDelegate {
     
     // MARK: - Button Action
     func addRssResourceDataAction() {
-        
+        let addRssVC = DYAddRssSourceViewController()
+        self.navigationController?.pushViewController(addRssVC, animated: true)
     }
+    
     func refreshTableDataAction() {
         // test right button
         parsedItems.removeAllObjects()
@@ -98,7 +112,7 @@ class ViewController: UITableViewController,MWFeedParserDelegate {
     
 // MARK: - Table view delegate
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 100;
+        return 90;
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,26 +19,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Rss Reader" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejE-5U-tx0">
-                                <rect key="frame" x="243" y="177" width="114" height="21"/>
+                                <rect key="frame" x="243" y="260" width="114" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="AvN-Ij-UnP"/>
                                     <constraint firstAttribute="width" constant="114" id="aqj-qE-2AI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xcode_dyh_icon" translatesAutoresizingMaskIntoConstraints="NO" id="47t-Pk-ASd">
+                                <rect key="frame" x="235" y="109" width="129" height="126"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="126" id="0Nt-GA-Nh2"/>
+                                    <constraint firstAttribute="width" constant="129" id="TKu-LP-27Y"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="强大的程序猿 －55082400" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xX0-ZL-NZl">
+                                <rect key="frame" x="40" y="549" width="520" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="YD0-Nv-piS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="xX0-ZL-NZl" secondAttribute="trailing" constant="20" id="0lF-XA-PtX"/>
+                            <constraint firstItem="xX0-ZL-NZl" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="20" id="85P-ba-0QK"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="xX0-ZL-NZl" secondAttribute="bottom" constant="30" id="C9C-EX-vvJ"/>
                             <constraint firstItem="ejE-5U-tx0" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="SRg-cc-QH4"/>
-                            <constraint firstItem="ejE-5U-tx0" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="157" id="nqq-Xy-ppU"/>
+                            <constraint firstItem="ejE-5U-tx0" firstAttribute="centerX" secondItem="47t-Pk-ASd" secondAttribute="centerX" id="g2K-Ny-dHD"/>
+                            <constraint firstItem="ejE-5U-tx0" firstAttribute="top" secondItem="47t-Pk-ASd" secondAttribute="bottom" constant="25" id="gTl-v7-iyf"/>
+                            <constraint firstItem="ejE-5U-tx0" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="240" id="nqq-Xy-ppU"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="312" y="385"/>
+            <point key="canvasLocation" x="265" y="312"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="xcode_dyh_icon" width="172" height="169"/>
+    </resources>
 </document>
